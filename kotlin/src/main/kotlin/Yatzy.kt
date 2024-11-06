@@ -13,28 +13,15 @@ class Yatzy(private val dice: IntArray) {
         return dice.filter { v -> v == 6 }.sum()
     }
 
+
+    fun chance(): Int {
+        return dice.sum()
+    }
+
+    fun yatzy(): Int {
+        return if (dice.distinct().size == 1) 50 else 0
+    }
     companion object {
-
-        fun chance(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int): Int {
-            var total = 0
-            total += d1
-            total += d2
-            total += d3
-            total += d4
-            total += d5
-            return total
-        }
-
-        fun yatzy(vararg dice: Int): Int {
-            val counts = IntArray(6)
-            for (die in dice)
-                counts[die - 1]++
-            for (i in 0..5)
-                if (counts[i] == 5)
-                    return 50
-            return 0
-        }
-
         fun ones(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int): Int {
             var sum = 0
             if (d1 == 1) sum++
