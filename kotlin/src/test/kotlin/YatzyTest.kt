@@ -64,18 +64,18 @@ class YatzyTest {
 
     @Test
     fun one_pair() {
-        assertEquals(6, Yatzy.score_pair(3, 4, 3, 5, 6))
-        assertEquals(6, Yatzy.score_pair(1, 3, 3, 3, 1))
-        assertEquals(10, Yatzy.score_pair(5, 3, 3, 3, 5))
-        assertEquals(12, Yatzy.score_pair(5, 3, 6, 6, 5))
-        assertEquals(0, Yatzy.score_pair(3, 4, 1, 5, 6))
+        assertEquals(6, Yatzy(intArrayOf(3, 4, 3, 5, 6)).score_pair())
+        assertEquals(6, Yatzy(intArrayOf(1, 3, 3, 3, 1)).score_pair())
+        assertEquals(10, Yatzy(intArrayOf(5, 3, 3, 3, 5)).score_pair())
+        assertEquals(12, Yatzy(intArrayOf(5, 3, 6, 6, 5)).score_pair())
+        assertEquals(0, Yatzy(intArrayOf(3, 4, 1, 5, 6)).score_pair())
     }
 
     @Test
     fun two_Pair() {
-        assertEquals(16, Yatzy.two_pair(3, 3, 5, 4, 5))
-        assertEquals(16, Yatzy.two_pair(3, 3, 5, 5, 5))
-        assertEquals(0, Yatzy.two_pair(3, 3, 2, 4, 5))
+        assertEquals(16, Yatzy(intArrayOf(3, 3, 5, 4, 5)).two_pair())
+        assertEquals(16, Yatzy(intArrayOf(3, 3, 5, 5, 5)).two_pair())
+        assertEquals(0, Yatzy(intArrayOf(3, 3, 2, 4, 5)).two_pair())
     }
 
     @Test

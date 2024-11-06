@@ -1,4 +1,3 @@
-
 class Yatzy(private val dice: IntArray) {
 
     fun fours(): Int {
@@ -33,47 +32,26 @@ class Yatzy(private val dice: IntArray) {
         return dice.filter { v -> v == 3 }.sum()
     }
 
+    fun score_pair(): Int {
+        val counts = IntArray(6)
+        dice.forEach { v -> counts[v - 1]++ }
+        val indexedValue: IndexedValue<Int>? = counts.withIndex().lastOrNull { iv -> iv.value >= 2 }
+        return when {
+            indexedValue != null && indexedValue.value >= 2 -> (indexedValue.index + 1) * 2
+            else -> 0
+        }
+    }
+
+    fun two_pair(): Int {
+        val counts = IntArray(6)
+        val indexedValues: List<IndexedValue<Int>> = counts.withIndex().filter { iv -> iv.value >= 2 }.takeLast(2)
+        return when (indexedValues.size) {
+            2 -> indexedValues.sumOf { it.index + 1 } * 2
+            else -> 0
+        }
+    }
+
     companion object {
-        fun score_pair(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int): Int {
-            val counts = IntArray(6)
-            counts[d1 - 1]++
-            counts[d2 - 1]++
-            counts[d3 - 1]++
-            counts[d4 - 1]++
-            counts[d5 - 1]++
-            var at: Int
-            at = 0
-            while (at != 6) {
-                if (counts[6 - at - 1] >= 2)
-                    return (6 - at) * 2
-                at++
-            }
-            return 0
-        }
-
-        fun two_pair(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int): Int {
-            val counts = IntArray(6)
-            counts[d1 - 1]++
-            counts[d2 - 1]++
-            counts[d3 - 1]++
-            counts[d4 - 1]++
-            counts[d5 - 1]++
-            var n = 0
-            var score = 0
-            var i = 0
-            while (i < 6) {
-                if (counts[6 - i - 1] >= 2) {
-                    n++
-                    score += 6 - i
-                }
-                i += 1
-            }
-            return if (n == 2)
-                score * 2
-            else
-                0
-        }
-
         fun four_of_a_kind(_1: Int, _2: Int, d3: Int, d4: Int, d5: Int): Int {
             val tallies: IntArray = IntArray(6)
             tallies[_1 - 1]++
