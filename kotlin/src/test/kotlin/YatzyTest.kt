@@ -80,36 +80,36 @@ class YatzyTest {
 
     @Test
     fun three_of_a_kind() {
-        assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 4, 5))
-        assertEquals(15, Yatzy.three_of_a_kind(5, 3, 5, 4, 5))
-        assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 3, 5))
-        assertEquals(0, Yatzy.three_of_a_kind(3, 1, 3, 4, 5))
+        assertEquals(9, Yatzy(intArrayOf(3, 3, 3, 4, 5)).three_of_a_kind())
+        assertEquals(15, Yatzy(intArrayOf(5, 3, 5, 4, 5)).three_of_a_kind())
+        assertEquals(9, Yatzy(intArrayOf(3, 3, 3, 3, 5)).three_of_a_kind())
+        assertEquals(0, Yatzy(intArrayOf(3, 1, 3, 4, 5)).three_of_a_kind())
     }
 
     @Test
     fun four_of_a_knd() {
-        assertEquals(12, Yatzy.four_of_a_kind(3, 3, 3, 3, 5))
-        assertEquals(20, Yatzy.four_of_a_kind(5, 5, 5, 4, 5))
-        assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 3, 3))
+        assertEquals(12, Yatzy(intArrayOf(3, 3, 3, 3, 5)).four_of_a_kind())
+        assertEquals(20, Yatzy(intArrayOf(5, 5, 5, 4, 5)).four_of_a_kind())
+        assertEquals(12, Yatzy(intArrayOf(3, 3, 3, 3, 3)).four_of_a_kind())
     }
 
     @Test
     fun smallStraight() {
-        assertEquals(15, Yatzy.smallStraight(1, 2, 3, 4, 5))
-        assertEquals(15, Yatzy.smallStraight(2, 3, 4, 5, 1))
-        assertEquals(0, Yatzy.smallStraight(1, 2, 2, 4, 5))
+        assertEquals(15, Yatzy(intArrayOf(1, 2, 3, 4, 5)).smallStraight())
+        assertEquals(15, Yatzy(intArrayOf(2, 3, 4, 5, 1)).smallStraight())
+        assertEquals(0, Yatzy(intArrayOf(1, 2, 2, 4, 5)).smallStraight())
     }
 
     @Test
     fun largeStraight() {
-        assertEquals(20, Yatzy.largeStraight(6, 2, 3, 4, 5))
-        assertEquals(20, Yatzy.largeStraight(2, 3, 4, 5, 6))
-        assertEquals(0, Yatzy.largeStraight(1, 2, 2, 4, 5))
+        assertEquals(20, Yatzy(intArrayOf(6, 2, 3, 4, 5)).largeStraight())
+        assertEquals(20, Yatzy(intArrayOf(2, 3, 4, 5, 6)).largeStraight())
+        assertEquals(0, Yatzy(intArrayOf(1, 2, 2, 4, 5)).largeStraight())
     }
 
     @Test
     fun fullHouse() {
-        assertEquals(18, Yatzy.fullHouse(6, 2, 2, 2, 6))
-        assertEquals(0, Yatzy.fullHouse(2, 3, 4, 5, 6))
+        assertEquals(18, Yatzy(intArrayOf(6, 2, 2, 2, 6)).fullHouse())
+        assertEquals(0, Yatzy(intArrayOf(2, 3, 4, 5, 6)).fullHouse())
     }
 }
