@@ -1,43 +1,16 @@
 
 class Yatzy(private val dice: IntArray) {
 
-    //private val dice: IntArray = IntArray(5)
-
-    /*init {
-        dice[0] = d1
-        dice[1] = d2
-        dice[2] = d3
-        dice[3] = d4
-        dice[4] = _5
-    }*/
-
     fun fours(): Int {
-        var sum: Int = 0
-        for (at in 0..4) {
-            if (dice[at] == 4) {
-                sum += 4
-            }
-        }
-        return sum
+        return dice.filter { v -> v == 4 }.sum()
     }
 
     fun fives(): Int {
-        var s = 0
-        var i: Int = 0
-        while (i < dice.size) {
-            if (dice[i] == 5)
-                s = s + 5
-            i++
-        }
-        return s
+        return dice.filter { v -> v == 5 }.sum()
     }
 
     fun sixes(): Int {
-        var sum = 0
-        for (at in dice.indices)
-            if (dice[at] == 6)
-                sum = sum + 6
-        return sum
+        return dice.filter { v -> v == 6 }.sum()
     }
 
     companion object {
