@@ -1,15 +1,15 @@
 
-class Yatzy(d1: Int, d2: Int, d3: Int, d4: Int, _5: Int) {
+class Yatzy(private val dice: IntArray) {
 
-    protected var dice: IntArray = IntArray(5)
+    //private val dice: IntArray = IntArray(5)
 
-    init {
+    /*init {
         dice[0] = d1
         dice[1] = d2
         dice[2] = d3
         dice[3] = d4
         dice[4] = _5
-    }
+    }*/
 
     fun fours(): Int {
         var sum: Int = 0

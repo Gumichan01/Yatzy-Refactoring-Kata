@@ -43,23 +43,23 @@ class YatzyTest {
 
     @Test
     fun fours_test() {
-        assertEquals(12, Yatzy(4, 4, 4, 5, 5).fours())
-        assertEquals(8, Yatzy(4, 4, 5, 5, 5).fours())
-        assertEquals(4, Yatzy(4, 5, 5, 5, 5).fours())
+        assertEquals(12, Yatzy(intArrayOf(4, 4, 4, 5, 5)).fours())
+        assertEquals(8, Yatzy(intArrayOf(4, 4, 5, 5, 5)).fours())
+        assertEquals(4, Yatzy(intArrayOf(4, 5, 5, 5, 5)).fours())
     }
 
     @Test
     fun fives() {
-        assertEquals(10, Yatzy(4, 4, 4, 5, 5).fives())
-        assertEquals(15, Yatzy(4, 4, 5, 5, 5).fives())
-        assertEquals(20, Yatzy(4, 5, 5, 5, 5).fives())
+        assertEquals(10, Yatzy(intArrayOf(4, 4, 4, 5, 5)).fives())
+        assertEquals(15, Yatzy(intArrayOf(4, 4, 5, 5, 5)).fives())
+        assertEquals(20, Yatzy(intArrayOf(4, 5, 5, 5, 5)).fives())
     }
 
     @Test
     fun sixes_test() {
-        assertEquals(0, Yatzy(4, 4, 4, 5, 5).sixes())
-        assertEquals(6, Yatzy(4, 4, 6, 5, 5).sixes())
-        assertEquals(18, Yatzy(6, 5, 6, 6, 5).sixes())
+        assertEquals(0, Yatzy(intArrayOf(4, 4, 4, 5, 5)).sixes())
+        assertEquals(6, Yatzy(intArrayOf(4, 4, 6, 5, 5)).sixes())
+        assertEquals(18, Yatzy(intArrayOf(6, 5, 6, 6, 5)).sixes())
     }
 
     @Test
