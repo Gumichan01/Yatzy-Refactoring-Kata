@@ -13,7 +13,6 @@ class Yatzy(private val dice: IntArray) {
         return dice.filter { v -> v == 6 }.sum()
     }
 
-
     fun chance(): Int {
         return dice.sum()
     }
@@ -21,39 +20,20 @@ class Yatzy(private val dice: IntArray) {
     fun yatzy(): Int {
         return if (dice.distinct().size == 1) 50 else 0
     }
+
+    fun ones(): Int {
+        return dice.filter { v -> v == 1 }.sum()
+    }
+
+    fun twos(): Int {
+        return dice.filter { v -> v == 2 }.sum()
+    }
+
+    fun threes(): Int {
+        return dice.filter { v -> v == 3 }.sum()
+    }
+
     companion object {
-        fun ones(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int): Int {
-            var sum = 0
-            if (d1 == 1) sum++
-            if (d2 == 1) sum++
-            if (d3 == 1) sum++
-            if (d4 == 1) sum++
-            if (d5 == 1)
-                sum++
-
-            return sum
-        }
-
-        fun twos(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int): Int {
-            var sum = 0
-            if (d1 == 2) sum += 2
-            if (d2 == 2) sum += 2
-            if (d3 == 2) sum += 2
-            if (d4 == 2) sum += 2
-            if (d5 == 2) sum += 2
-            return sum
-        }
-
-        fun threes(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int): Int {
-            var s: Int = 0
-            if (d1 == 3) s += 3
-            if (d2 == 3) s += 3
-            if (d3 == 3) s += 3
-            if (d4 == 3) s += 3
-            if (d5 == 3) s += 3
-            return s
-        }
-
         fun score_pair(d1: Int, d2: Int, d3: Int, d4: Int, d5: Int): Int {
             val counts = IntArray(6)
             counts[d1 - 1]++
